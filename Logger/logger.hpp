@@ -31,7 +31,7 @@ class Logger
 			std::clog.rdbuf(buf);
 		}
 		Logger(const Logger& logger){}
-		Logger operator=(Logger logger){}
+		Logger operator=(const Logger& logger){}
 		~Logger(){}
 		string toString(LogLevel level)
 		{
@@ -75,7 +75,7 @@ class Logger
 		{
 			if (__DEBUG_ && level>INFO)
 				std::clog<<getDateTimeStamp()<<"\t"<<toString(level)<<std::endl<<"\t"<<message<<std::endl;
-			else` (level <= INFO)
+			else if (level <= INFO)
 				std::clog<<getDateTimeStamp()<<"\t"<<toString(level)<<" : "<<message<<std::endl;
 			
 		}		
