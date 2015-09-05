@@ -32,7 +32,10 @@ class Logger
 		}
 		Logger(const Logger& logger){}
 		Logger operator=(const Logger& logger){}
-		~Logger(){}
+		~Logger()
+		{
+			delete logInstance;
+		}
 		string toString(LogLevel level)
 		{
 			switch(level)

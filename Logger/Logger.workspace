@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="Logger" Database="./Logger.tags">
-  <Project Name="Logger" Path="Logger.project" Active="Yes"/>
+  <Project Name="Logger" Path="Logger.project" Active="No"/>
+  <Project Name="PropLoader" Path="../../PropLoader/PropLoader/PropLoader.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Project Name="Logger" ConfigName="Debug"/>
+      <Project Name="PropLoader" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Project Name="Logger" ConfigName="Release"/>
+      <Project Name="PropLoader" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

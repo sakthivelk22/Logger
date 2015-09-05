@@ -91,4 +91,6 @@
     <File Name="main.cpp"/>
     <File Name="logger.hpp"/>
   </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
 </CodeLite_Project>

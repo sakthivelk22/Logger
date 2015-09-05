@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Logger - Debug ]----------"
-	@$(MAKE) -f  "Logger.mk"
+	@echo "----------Building project:[ PropLoader - Debug ]----------"
+	@cd "C:\Users\King0Beasts\Documents\GitHub\PropLoader\PropLoader" && $(MAKE) -f  "PropLoader.mk"
 clean:
-	@echo "----------Cleaning project:[ Logger - Debug ]----------"
-	@$(MAKE) -f  "Logger.mk" clean
+	@echo "----------Cleaning project:[ PropLoader - Debug ]----------"
+	@cd "C:\Users\King0Beasts\Documents\GitHub\PropLoader\PropLoader" && $(MAKE) -f  "PropLoader.mk" clean
