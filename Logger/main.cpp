@@ -2,10 +2,13 @@
 #include <cstdio>
 #include "Logger.hpp"
 
+
 int main(int argc, char* argv[])
 {
-	cout<<_Logger::Logger::getFileName();
-	_Logger::Logger::getInstance("test.log");
+	_logger::Logger* logInstance = _logger::Logger::getInstance("test.log");
+	logInstance->log(_logger::SEVERE,"Test 123");
+	logInstance->log(_logger::FINE,"Help");
+	
 	getchar();
 	return 0;
 }
