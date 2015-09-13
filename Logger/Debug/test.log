@@ -1,28 +1,37 @@
-Sat Sep 05 06:39:57 2015
+Sun Sep 13 18:32:14 2015
 	SEVERE : Test 123
-Sat Sep 05 06:40:08 2015
-	SEVERE : Test 123
-Sat Sep 05 06:41:00 2015
-	SEVERE : Test 123
-Sat Sep 05 06:41:16 2015
-	SEVERE : Test 123
-Sat Sep 05 06:42:15 2015
-	SEVERE : Test 123
-Sat Sep 05 06:42:15 2015
+Sun Sep 13 18:32:14 2015
 	FINE
 	Help
-Sat Sep 05 06:43:12 2015
+Sun Sep 13 18:32:14 2015
+	FINE
+	Another Help
+Sun Sep 13 18:32:34 2015
 	SEVERE : Test 123
-Sat Sep 05 06:46:36 2015
-	SEVERE : Test 123
-Sat Sep 05 06:46:36 2015
+Sun Sep 13 18:32:34 2015
 	FINE
 	Help
-Sat Sep 05 06:47:00 2015
-	SEVERE : Test 123
-Sat Sep 05 07:06:13 2015
-	SEVERE : Test 123
-Sat Sep 05 07:07:20 2015
-	SEVERE : Test 123
-Sat Sep 05 07:07:33 2015
-	SEVERE : Test 123
+Sun Sep 13 18:32:34 2015
+	FINE
+	Another Help
+Sun Sep 13 18:41:47 2015	SEVERE : Test 123
+Sun Sep 13 18:41:47 2015	FINE
+	Help
+Sun Sep 13 18:41:47 2015	FINE
+	Another Help
+Sun Sep 13 18:51:46 2015	FINE
+	Help
+Sun Sep 13 18:51:46 2015	FINE
+	Another Help
+Sun Sep 13 18:52:07 2015	FINE
+	Help
+Sun Sep 13 18:52:07 2015	FINE
+	Another Help
+Sun Sep 13 18:53:53 2015	FINE
+	Help
+Sun Sep 13 18:53:53 2015	FINE
+	Another Help
+Sun Sep 13 18:55:17 2015	FINE
+	Help
+Sun Sep 13 18:55:17 2015	FINE
+	Another Help

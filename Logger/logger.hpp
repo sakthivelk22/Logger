@@ -1,6 +1,9 @@
 #ifndef __LOGGER_HPP
 #define __LOGGER_HPP
-#define __DEBUG_ 0
+
+#ifndef __DEBUG__
+#define __DEBUG__ 0
+#endif
 
 #include <string>
 #include <cstddef>
@@ -8,13 +11,41 @@
 #include <fstream>
 #include <cstddef>
 #include <ctime>
+#include <cstring>
 
 using namespace std;
 
-namespace _logger
+namespace _level
 {
 enum  LogLevel 
 { SEVERE, WARNING, INFO, DEBUG, FINE, FINER, FINEST};
+
+string toString(LogLevel level)
+{
+    switch(level)
+    {
+    case SEVERE:
+        return "SEVERE";;
+    case WARNING:
+        return "WARNING";;
+    case INFO:
+        return "INFO";;
+    case DEBUG:
+        return "DEBUG";;
+    case FINE:
+        return "FINE";;
+    case FINER:
+        return "FINER";;
+    case FINEST:
+        return "FINEST";;
+    default:
+        return "INFO";;
+    }
+}
+}
+
+namespace _logger
+{
 
 class Logger
 {
@@ -31,32 +62,10 @@ class Logger
 			std::clog.rdbuf(buf);
 		}
 		Logger(const Logger& logger){}
-		Logger operator=(const Logger& logger){}
+		Logger operator=(const Logger& logger){ /*Making Private*/ return *this;}
 		~Logger()
 		{
 			delete logInstance;
-		}
-		string toString(LogLevel level)
-		{
-			switch(level)
-			{
-			case SEVERE:
-				return "SEVERE";;
-			case WARNING:
-				return "WARNING";;
-			case INFO:
-				return "INFO";;
-			case DEBUG:
-				return "DEBUG";;
-			case FINE:
-				return "FINE";;
-			case FINER:
-				return "FINER";;
-			case FINEST:
-				return "FINEST";;
-			default:
-				return "INFO";;
-			}
 		}
 	public:
 		static Logger* getInstance(string outFile)
@@ -74,19 +83,23 @@ class Logger
 			return this->fileName;
 		}
 		
-		void log(LogLevel level,string message)
+		void log(_level::LogLevel level,string message)
 		{
-			if (__DEBUG_ && level>INFO)
-				std::clog<<getDateTimeStamp()<<"\t"<<toString(level)<<std::endl<<"\t"<<message<<std::endl;
-			else if (level <= INFO)
+			if (__DEBUG__ &&level>_level::INFO)
+                std::clog<<getDateTimeStamp()<<"\t"<<toString(level)<<std::endl<<"\t"<<message<<std::endl;
+			else if (level <= _level::INFO)
 				std::clog<<getDateTimeStamp()<<"\t"<<toString(level)<<" : "<<message<<std::endl;
-			
 		}		
+        
 		string getDateTimeStamp()
 		{
 			time_t rawtime = time(0);
 			struct tm *timestruct = localtime(&rawtime);
-			return asctime(timestruct);
+			char * value = asctime(timestruct);
+            char* replace = strchr(value,'\n') ;
+            replace[0]='\0';
+            return value;
+            
 		}
 };
 
