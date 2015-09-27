@@ -90,6 +90,9 @@
   <VirtualDirectory Name="src">
     <File Name="main.cpp"/>
     <File Name="logger.hpp"/>
+    <File Name="logger.cpp"/>
+    <File Name="TEST.hpp"/>
+    <File Name="TEST.cpp"/>
   </VirtualDirectory>
   <Dependencies Name="Debug"/>
   <Dependencies Name="Release"/>

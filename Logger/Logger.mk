@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=User
-Date                   :=13/09/2015
+Date                   :=27/09/2015
 CodeLitePath           :="C:\Program Files\CodeLite"
 LinkerName             :=C:/TDM_GCC_MINGW/bin/g++.exe
 SharedObjectLinkerName :=C:/TDM_GCC_MINGW/bin/g++.exe -shared -fPIC
@@ -63,7 +63,7 @@ AS       := C:/TDM_GCC_MINGW/bin/as.exe
 ##
 CodeLiteDir:="C:\Program Files\CodeLite"
 UNIT_TEST_PP_SRC_DIR:="C:\UNITTEST_CPP"
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/logger.cpp$(ObjectSuffix) $(IntermediateDirectory)/TEST.cpp$(ObjectSuffix) 
 
 
 
@@ -101,6 +101,22 @@ $(IntermediateDirectory)/main.cpp$(DependSuffix): main.cpp
 
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) "main.cpp"
+
+$(IntermediateDirectory)/logger.cpp$(ObjectSuffix): logger.cpp $(IntermediateDirectory)/logger.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/CodeBase/Logger/Logger/logger.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/logger.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/logger.cpp$(DependSuffix): logger.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/logger.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/logger.cpp$(DependSuffix) -MM "logger.cpp"
+
+$(IntermediateDirectory)/logger.cpp$(PreprocessSuffix): logger.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/logger.cpp$(PreprocessSuffix) "logger.cpp"
+
+$(IntermediateDirectory)/TEST.cpp$(ObjectSuffix): TEST.cpp $(IntermediateDirectory)/TEST.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "F:/CodeBase/Logger/Logger/TEST.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/TEST.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/TEST.cpp$(DependSuffix): TEST.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/TEST.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/TEST.cpp$(DependSuffix) -MM "TEST.cpp"
+
+$(IntermediateDirectory)/TEST.cpp$(PreprocessSuffix): TEST.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/TEST.cpp$(PreprocessSuffix) "TEST.cpp"
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
